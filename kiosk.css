@@ -1,0 +1,64 @@
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+
+    -webkit-transform: translateX(-100%);
+    -webkit-opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -webkit-opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -webkit-opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    -webkit-opacity: 0;
+  }
+}
+
+body {
+  background: #000;
+  color: #FFF;
+  text-align: center;
+  padding: 30px;
+  margin-left: 25%;
+  margin-right: 25%;
+  overflow: hidden;
+  font-family: "Segoe UI", Arial, Helvetica, Sans Serif;
+  
+  /* this section calls the dropHeader animation we defined above */
+  -webkit-animation-name: slideIn;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 0.6s;
+
+  animation-name: slideIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;
+}
+
+body.unloading {
+  -webkit-animation-name: slideOut;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 0.6s;
+
+  animation-name: slideOut;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.6s;
+}
